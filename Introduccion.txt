@@ -1,0 +1,3 @@
+El proyecto consiste en una web en la que el usuario indica el numero de preguntas que tendra el examen y la posibles preguntas que contendra.
+
+Por ejemplo: Hay 10 posibles pregunta ,  y el examen solo trendra 5 preguntas. Se generaran examenes con las diferentes convianciones posibles sin que se repitan examenes con las mismas preguntas.
