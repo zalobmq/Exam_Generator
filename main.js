@@ -48,10 +48,14 @@ function combinations(pregutasPosibles, k) {
 }
 
 
+
 /* 
     ESCOGER UN EXAMEN AL AZAR DE TODOS LOS POSIBLES
 */
-
+function chosseOneExamn(listExams){
+    let exam = listExams[Math.floor(Math.random() * listExams.length)];
+    return exam;
+}
 /* 
 DESCARGAR PDF DE TODOS LOS POSIBLES EXAMENES
  */
@@ -64,8 +68,8 @@ function arrayToReadablePDF(questions, title) {
 
 
     doc.setFontType("normal");
-    doc.text("\nNUMERO DE COMBINACIONES POSIBLES: " + questions.length, 10, 20);
-    doc.setFontSize(12);
+/*     doc.text("\nNúmero de posibles examenes: "+questions.length, 10, 20);
+ */    doc.setFontSize(12);
 
     questions.forEach((question, index) => {
         doc.addPage();
@@ -83,6 +87,10 @@ function arrayToReadablePDF(questions, title) {
     doc.save("preguntas_Al-Andalus.pdf");
 }
 console.log(combinations(pregutasPosibles, numeroDePreguntasDelExamen));//EN CADA ARRAY HABRA SOLO 5 
-arrayToReadablePDF(combinations(pregutasPosibles, numeroDePreguntasDelExamen), "POSIBLES EXAMENES DE PRUEBA:");
+console.log( chosseOneExamn(combinations(pregutasPosibles, numeroDePreguntasDelExamen), "- EXAMEN ELEGIDO -"));
+arrayToReadablePDF(
+    chosseOneExamn(combinations(pregutasPosibles, numeroDePreguntasDelExamen), "- EXAMEN ELEGIDO -")
+        );
+
 // ARRAY DE PALABRAS , NUMERO DE PALABRAS PARA CADA ARRAY DEFINITIVO
 
